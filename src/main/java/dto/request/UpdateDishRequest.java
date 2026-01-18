@@ -1,0 +1,67 @@
+package dto.request;
+
+import java.math.BigDecimal;
+
+public class UpdateDishRequest {
+
+    private String dishName;
+    private Boolean isVeg;
+    private String description;
+    private BigDecimal price;
+    private String currency;
+    private String imageUrl;
+    private String videoUrl;
+    private String tagIdsList;
+	public String getDishName() {
+		return dishName;
+	}
+	public void setDishName(String dishName) {
+		this.dishName = dishName;
+	}
+	public Boolean getIsVeg() {
+		return isVeg;
+	}
+	public void setIsVeg(Boolean isVeg) {
+		this.isVeg = isVeg;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public BigDecimal getPrice() {
+		return price;
+	}
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+	public String getCurrency() {
+		return currency;
+	}
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	public String getVideoUrl() {
+		return videoUrl;
+	}
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
+	}
+	public String getTagIdsList() {
+		return tagIdsList;
+	}
+	public void setTagIdsList(String tagIdsList) {
+		this.tagIdsList = tagIdsList;
+	}
+
+    
+    
+    
+}
