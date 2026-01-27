@@ -1,5 +1,6 @@
 package service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dto.request.AdminLoginRequest;
@@ -11,11 +12,10 @@ import repository.UserRepository;
 @Service
 public class AdminAuthService {
 
-	private final UserRepository userRepository;
+	@Autowired
+	private  UserRepository userRepository;
 
-    public AdminAuthService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+   
 
     // ADMIN SIGNUP
     public void signup(AdminSignupRequest request) {
