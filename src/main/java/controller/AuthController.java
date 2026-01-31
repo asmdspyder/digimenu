@@ -8,7 +8,7 @@ import dto.response.UserLoginResponse;
 import service.AuthService;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/user/auth")
 public class AuthController {
 
     private final AuthService authService;
