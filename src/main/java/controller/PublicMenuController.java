@@ -3,10 +3,8 @@ package controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import dto.response.PublicCategoryResponse;
+import dto.response.PublicMenuResponse;
 import service.PublicMenuService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/menu")
@@ -18,13 +16,11 @@ public class PublicMenuController {
         this.publicMenuService = publicMenuService;
     }
 
-    // QR-based menu API
     @GetMapping
-    public ResponseEntity<List<PublicCategoryResponse>> getMenu(
+    public ResponseEntity<PublicMenuResponse> getMenu(
             @RequestParam String accountId) {
 
         return ResponseEntity.ok(
-                publicMenuService.getMenu(accountId)
-        );
+                publicMenuService.getMenu(accountId));
     }
 }
