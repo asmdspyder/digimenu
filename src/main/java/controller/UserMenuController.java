@@ -1,7 +1,5 @@
 package controller;
 
-
-
 import service.UserCategoryService;
 import service.UserDishService;
 
@@ -21,7 +19,7 @@ public class UserMenuController {
     private final UserDishService dishService;
 
     public UserMenuController(UserCategoryService categoryService,
-                              UserDishService dishService) {
+            UserDishService dishService) {
         this.categoryService = categoryService;
         this.dishService = dishService;
     }
@@ -30,7 +28,7 @@ public class UserMenuController {
     @GetMapping("/categories")
     public ResponseEntity<List<Category>> categories(
             @RequestParam Long accountId) {
-        return ResponseEntity.ok(categoryService.getActiveCategories(accountId));
+        return ResponseEntity.ok(categoryService.getCategories(accountId));
     }
 
     // Activate / Inactivate category
@@ -46,7 +44,7 @@ public class UserMenuController {
     @GetMapping("/dishes/{categoryId}")
     public ResponseEntity<List<Dish>> dishes(
             @PathVariable Long categoryId) {
-        return ResponseEntity.ok(dishService.getActiveDishes(categoryId));
+        return ResponseEntity.ok(dishService.getDishes(categoryId));
     }
 
     // Activate / Inactivate dish

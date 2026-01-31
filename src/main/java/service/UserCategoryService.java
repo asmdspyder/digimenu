@@ -16,8 +16,8 @@ public class UserCategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    public List<Category> getActiveCategories(Long accountId) {
-        return categoryRepository.findByAccount_IdAndActiveTrue(accountId);
+    public List<Category> getCategories(Long accountId) {
+        return categoryRepository.findByAccount_Id(accountId);
     }
 
     public void activateCategory(Long categoryId, boolean active) {
