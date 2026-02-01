@@ -31,14 +31,15 @@ public class RestaurantService {
         account.setAccountName(request.getAccountName());
         account.setNumberOfTables(request.getNumberOfTables());
         account.setLogoUrl(request.getLogoUrl());
-        account.setIntroVideoUrl(request.getIntroVideoUrl());   // ✅ ADD
-        account.setThemeSettings(request.getThemeSettings());   // ✅ ADD
+        account.setIntroVideoUrl(request.getIntroVideoUrl()); // ✅ ADD
+        account.setThemeSettings(request.getThemeSettings()); // ✅ ADD
         account.setTagline(request.getTagline());
         account.setDescription(request.getDescription());
         account.setActive(true);
 
         accountRepository.save(account);
     }
+
     public void updateRestaurant(Long id, UpdateRestaurantRequest request) {
 
         Account account = accountRepository.findById(id)
@@ -47,8 +48,8 @@ public class RestaurantService {
         account.setAccountName(request.getAccountName());
         account.setNumberOfTables(request.getNumberOfTables());
         account.setLogoUrl(request.getLogoUrl());
-        account.setIntroVideoUrl(request.getIntroVideoUrl());   // ✅ ADD
-        account.setThemeSettings(request.getThemeSettings());   // ✅ ADD
+        account.setIntroVideoUrl(request.getIntroVideoUrl()); // ✅ ADD
+        account.setThemeSettings(request.getThemeSettings()); // ✅ ADD
         account.setTagline(request.getTagline());
         account.setDescription(request.getDescription());
 
@@ -72,8 +73,13 @@ public class RestaurantService {
                         a.getId(),
                         a.getAccountId(),
                         a.getAccountName(),
-                        a.getActive()
-                ))
+                        a.getActive(),
+                        a.getThemeSettings(),
+                        a.getNumberOfTables(),
+                        a.getLogoUrl(),
+                        a.getIntroVideoUrl(),
+                        a.getTagline(),
+                        a.getDescription()))
                 .collect(Collectors.toList());
     }
 }
