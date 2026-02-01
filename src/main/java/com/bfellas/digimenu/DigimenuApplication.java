@@ -14,7 +14,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         "service",
         "repository",
         "entity",
-        "dto"
+        "dto",
+        "config"
 })
 public class DigimenuApplication {
 
