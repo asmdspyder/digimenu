@@ -92,7 +92,13 @@ public class DishService {
                                 .map(d -> new DishResponse(
                                                 d.getId(),
                                                 d.getDishName(),
+                                                d.getIsVeg(),
+                                                d.getDescription(),
                                                 d.getPrice(),
+                                                d.getCurrency(),
+                                                d.getImageUrl(),
+                                                d.getVideoUrl(),
+                                                d.getTagIdsList(),
                                                 d.getActive()))
                                 .collect(Collectors.toList());
         }
