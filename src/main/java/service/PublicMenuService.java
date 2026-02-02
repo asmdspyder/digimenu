@@ -65,7 +65,8 @@ public class PublicMenuService {
                                                         d.getCurrency(),
                                                         d.getImageUrl(),
                                                         d.getVideoUrl(),
-                                                        d.getTagIdsList()))
+                                                        d.getTagIdsList(),
+                                                        d.getDisplayOrder()))
                                         .collect(Collectors.toList());
 
                         return new PublicCategoryResponse(

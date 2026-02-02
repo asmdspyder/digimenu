@@ -4,37 +4,39 @@ import java.math.BigDecimal;
 
 public class PublicDishResponse {
 
-    private Long id;
-    private String dishName;
-    private Boolean isVeg;
-    private String description;
-    private BigDecimal price;
-    private String currency;
-    private String imageUrl;
-    private String videoUrl;
-    private String tagIdsList;
+	private Long id;
+	private String dishName;
+	private Boolean isVeg;
+	private String description;
+	private BigDecimal price;
+	private String currency;
+	private String imageUrl;
+	private String videoUrl;
+	private String tagIdsList;
+	private Integer displayOrder;
 
-    public PublicDishResponse(
-            Long id,
-            String dishName,
-            Boolean isVeg,
-            String description,
-            BigDecimal price,
-            String currency,
-            String imageUrl,
-            String videoUrl,
-            String tagIdsList
-    ) {
-        this.id = id;
-        this.dishName = dishName;
-        this.isVeg = isVeg;
-        this.description = description;
-        this.price = price;
-        this.currency = currency;
-        this.imageUrl = imageUrl;
-        this.videoUrl = videoUrl;
-        this.tagIdsList = tagIdsList;
-    }
+	public PublicDishResponse(
+			Long id,
+			String dishName,
+			Boolean isVeg,
+			String description,
+			BigDecimal price,
+			String currency,
+			String imageUrl,
+			String videoUrl,
+			String tagIdsList,
+			Integer displayOrder) {
+		this.id = id;
+		this.dishName = dishName;
+		this.isVeg = isVeg;
+		this.description = description;
+		this.price = price;
+		this.currency = currency;
+		this.imageUrl = imageUrl;
+		this.videoUrl = videoUrl;
+		this.tagIdsList = tagIdsList;
+		this.displayOrder = displayOrder;
+	}
 
 	public Long getId() {
 		return id;
@@ -108,5 +110,12 @@ public class PublicDishResponse {
 		this.tagIdsList = tagIdsList;
 	}
 
-    
+	public Integer getDisplayOrder() {
+		return displayOrder;
+	}
+
+	public void setDisplayOrder(Integer displayOrder) {
+		this.displayOrder = displayOrder;
+	}
+
 }

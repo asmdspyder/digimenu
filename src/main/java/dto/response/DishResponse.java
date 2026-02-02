@@ -13,13 +13,15 @@ public class DishResponse {
     private String imageUrl;
     private String videoUrl;
     private String tagIdsList;
+    private Integer displayOrder;
     private Boolean active;
 
     public DishResponse() {
     }
 
     public DishResponse(Long id, String dishName, Boolean isVeg, String description, BigDecimal price,
-            String currency, String imageUrl, String videoUrl, String tagIdsList, Boolean active) {
+            String currency, String imageUrl, String videoUrl, String tagIdsList, Integer displayOrder,
+            Boolean active) {
         this.id = id;
         this.dishName = dishName;
         this.isVeg = isVeg;
@@ -29,6 +31,7 @@ public class DishResponse {
         this.imageUrl = imageUrl;
         this.videoUrl = videoUrl;
         this.tagIdsList = tagIdsList;
+        this.displayOrder = displayOrder;
         this.active = active;
     }
 
@@ -102,6 +105,14 @@ public class DishResponse {
 
     public void setTagIdsList(String tagIdsList) {
         this.tagIdsList = tagIdsList;
+    }
+
+    public Integer getDisplayOrder() {
+        return displayOrder;
+    }
+
+    public void setDisplayOrder(Integer displayOrder) {
+        this.displayOrder = displayOrder;
     }
 
     public Boolean getActive() {

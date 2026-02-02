@@ -8,47 +8,50 @@ import java.time.LocalDateTime;
 @Table(name = "dishes")
 public class Dish {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Column(name = "dish_name", nullable = false)
-    private String dishName;
+	@Column(name = "dish_name", nullable = false)
+	private String dishName;
 
-    @Column(name = "is_veg")
-    private Boolean isVeg;
+	@Column(name = "is_veg")
+	private Boolean isVeg;
 
-    private String description;
+	private String description;
 
-    private BigDecimal price;
+	private BigDecimal price;
 
-    private String currency;
+	private String currency;
 
-    @Column(name = "image_url")
-    private String imageUrl;
+	@Column(name = "display_order")
+	private Integer displayOrder;
 
-    @Column(name = "video_url")
-    private String videoUrl;
+	@Column(name = "image_url")
+	private String imageUrl;
 
-    @Column(name = "tag_ids_list")
-    private String tagIdsList; // comma separated IDs
+	@Column(name = "video_url")
+	private String videoUrl;
 
-    @Column(name = "is_active")
-    private Boolean active = true;
+	@Column(name = "tag_ids_list")
+	private String tagIdsList; // comma separated IDs
 
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
+	@Column(name = "is_active")
+	private Boolean active = true;
 
-    @ManyToOne
-    @JoinColumn(name = "account_id", nullable = false)
-    private Account account;
+	@ManyToOne
+	@JoinColumn(name = "category_id", nullable = false)
+	private Category category;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
+	@ManyToOne
+	@JoinColumn(name = "account_id", nullable = false)
+	private Account account;
 
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt = LocalDateTime.now();
+	@Column(name = "created_at")
+	private LocalDateTime createdAt = LocalDateTime.now();
+
+	@Column(name = "updated_at")
+	private LocalDateTime updatedAt = LocalDateTime.now();
 
 	public Long getId() {
 		return id;
@@ -96,6 +99,14 @@ public class Dish {
 
 	public void setCurrency(String currency) {
 		this.currency = currency;
+	}
+
+	public Integer getDisplayOrder() {
+		return displayOrder;
+	}
+
+	public void setDisplayOrder(Integer displayOrder) {
+		this.displayOrder = displayOrder;
 	}
 
 	public String getImageUrl() {
@@ -162,5 +173,4 @@ public class Dish {
 		this.updatedAt = updatedAt;
 	}
 
-   
 }

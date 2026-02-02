@@ -55,6 +55,7 @@ public class DishService {
                 dish.setCategory(category);
                 dish.setAccount(account);
                 dish.setActive(true);
+                dish.setDisplayOrder(request.getDisplayOrder());
 
                 dishRepository.save(dish);
         }
@@ -72,6 +73,7 @@ public class DishService {
                 dish.setImageUrl(request.getImageUrl());
                 dish.setVideoUrl(request.getVideoUrl());
                 dish.setTagIdsList(request.getTagIdsList());
+                dish.setDisplayOrder(request.getDisplayOrder());
 
                 dishRepository.save(dish);
         }
@@ -99,6 +101,7 @@ public class DishService {
                                                 d.getImageUrl(),
                                                 d.getVideoUrl(),
                                                 d.getTagIdsList(),
+                                                d.getDisplayOrder(),
                                                 d.getActive()))
                                 .collect(Collectors.toList());
         }
