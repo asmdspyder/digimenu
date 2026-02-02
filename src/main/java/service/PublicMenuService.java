@@ -73,6 +73,7 @@ public class PublicMenuService {
                                         category.getId(),
                                         category.getCategoryName(),
                                         category.getImageUrl(),
+                                        category.getDisplayOrder(),
                                         dishResponses);
 
                 }).collect(Collectors.toList());

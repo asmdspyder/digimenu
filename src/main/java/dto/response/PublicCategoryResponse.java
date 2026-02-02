@@ -4,22 +4,24 @@ import java.util.List;
 
 public class PublicCategoryResponse {
 
-    private Long id;
-    private String categoryName;
-    private String imageUrl;
-    private List<PublicDishResponse> dishes;
+	private Long id;
+	private String categoryName;
+	private String imageUrl;
+	private Integer displayOrder;
+	private List<PublicDishResponse> dishes;
 
-    public PublicCategoryResponse(
-            Long id,
-            String categoryName,
-            String imageUrl,
-            List<PublicDishResponse> dishes
-    ) {
-        this.id = id;
-        this.categoryName = categoryName;
-        this.imageUrl = imageUrl;
-        this.dishes = dishes;
-    }
+	public PublicCategoryResponse(
+			Long id,
+			String categoryName,
+			String imageUrl,
+			Integer displayOrder,
+			List<PublicDishResponse> dishes) {
+		this.id = id;
+		this.categoryName = categoryName;
+		this.imageUrl = imageUrl;
+		this.displayOrder = displayOrder;
+		this.dishes = dishes;
+	}
 
 	public Long getId() {
 		return id;
@@ -45,6 +47,14 @@ public class PublicCategoryResponse {
 		this.imageUrl = imageUrl;
 	}
 
+	public Integer getDisplayOrder() {
+		return displayOrder;
+	}
+
+	public void setDisplayOrder(Integer displayOrder) {
+		this.displayOrder = displayOrder;
+	}
+
 	public List<PublicDishResponse> getDishes() {
 		return dishes;
 	}
@@ -53,5 +63,4 @@ public class PublicCategoryResponse {
 		this.dishes = dishes;
 	}
 
-  
 }
