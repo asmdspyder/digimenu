@@ -20,7 +20,7 @@ public class CategoryService {
     private final AccountRepository accountRepository;
 
     public CategoryService(CategoryRepository categoryRepository,
-                           AccountRepository accountRepository) {
+            AccountRepository accountRepository) {
         this.categoryRepository = categoryRepository;
         this.accountRepository = accountRepository;
     }
@@ -70,8 +70,10 @@ public class CategoryService {
                 .map(c -> new CategoryResponse(
                         c.getId(),
                         c.getCategoryName(),
-                        c.getActive()
-                ))
+                        c.getDescription(),
+                        c.getImageUrl(),
+                        c.getDisplayOrder(),
+                        c.getActive()))
                 .collect(Collectors.toList());
     }
 }
